@@ -1,0 +1,19 @@
+<main class="container">
+  <div class="list">
+    <h1>List</h1>
+    <app-change-list-card
+      class="list-item"
+      *ngFor="let card of cards"
+      (click)="handleClick(card)"
+      [card]="card"
+    ></app-change-list-card>
+  </div>
+
+  <div class="details">
+    <h2>{{ selectedCard.name }}</h2>
+    <p>
+      {{ selectedCard.content }}
+    </p>
+    <button>Save</button>
+  </div>
+</main>
