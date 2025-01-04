@@ -1,23 +1,21 @@
-/* Main container layout */
 .container {
   display: flex;
   height: 100vh;
-  border: 1px solid #ccc;
 }
 
 .list {
-  flex: 2;
+  flex: 3;
   border: 1px solid black;
+  border: #fff;
+  list-style: none;
 }
 
 .list-item {
-  display: flex;
+  display: block;
   background-color: #fff;
   border-top: 2px solid black;
-}
 
-.list-item:hover {
-  background-color: #f0f0f0;
+  height: 100px;
 }
 
 .details {

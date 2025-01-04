@@ -1,13 +1,20 @@
-<main class="container">
-  <div class="list">
+<div class="container">
+  <ul class="list">
     <h1>List</h1>
     <app-change-list-card
       class="list-item"
       *ngFor="let card of cards"
-      (click)="handleClick(card)"
+      (cardRef)="handleClick($event)"
       [card]="card"
+      [ngStyle]="{
+        'border-left':
+          card === selectedCard
+            ? '10px solid ' + card.color
+            : '5px solid ' + card.color,
+        background: card === selectedCard ? 'lightgrey' : ''
+      }"
     ></app-change-list-card>
-  </div>
+  </ul>
 
   <div class="details">
     <h2>{{ selectedCard.name }}</h2>
@@ -16,4 +23,4 @@
     </p>
     <button>Save</button>
   </div>
-</main>
+</div>
