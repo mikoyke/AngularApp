@@ -19,6 +19,7 @@ import { TestPipe } from "./custompipe/test.pipe";
 import { TodoPipePipe } from "./todo/todo-pipe.pipe";
 import { ContextPipePipe } from "./change-list-card/context-pipe.pipe";
 import { RxjsIntroComponent } from './rxjs-intro/rxjs-intro.component';
+import { SubjectTestComponent } from './subject-test/subject-test.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { RxjsIntroComponent } from './rxjs-intro/rxjs-intro.component';
     TodoPipePipe,
     ContextPipePipe,
     RxjsIntroComponent,
+    SubjectTestComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [TodoService],
