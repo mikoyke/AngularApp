@@ -1,4 +1,4 @@
 <li (click)="handleClick()">
   <h3>{{ card.name }}</h3>
-  <p>{{ card.content }}</p>
+  <p>{{ card.content | contextPipe : "70" }}</p>
 </li>

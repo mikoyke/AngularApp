@@ -14,7 +14,7 @@
   display: block;
   background-color: #fff;
   border-top: 2px solid black;
-
+  overflow: hidden;
   height: 100px;
 }
 

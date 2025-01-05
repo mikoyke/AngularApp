@@ -14,12 +14,15 @@ property binding:
       type="text"
       class="todolist-input"
       placeholder="Input your todo..."
-      [(ngModel)]="title"
+      [(ngModel)]="search"
     />
-    <!-- {{ title }} -----------tool binding-->
+
+    <!-- 
+    <input [(ngModel)]="title" />
+    {{ title }} -----------tool binding, title = input.value-->
     <ul class="todolist-container">
       <app-todo-item
-        *ngFor="let todo of todos"
+        *ngFor="let todo of todos | todoPipe : search"
         [item]="todo"
         (todoidRef)="deleteTodo($event)"
       ></app-todo-item>
