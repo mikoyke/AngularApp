@@ -29,6 +29,7 @@ export class TodoComponent {
     // });
     this.todoService.gettodo().subscribe((todos) => {
       this.todos = todos;
+
       // this.searchedArr = [...this.todos]; //only a copy, so when searchedArr has changed, this.todos won't change.
     });
   }
