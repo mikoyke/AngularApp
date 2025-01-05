@@ -1,0 +1,33 @@
+header {
+  background-color: #4a868a;
+  padding: 20px;
+  text-align: center;
+}
+
+.search-bar {
+  position: relative;
+  display: inline-block;
+}
+
+.search-input {
+  padding-right: 40px;
+  height: 30px;
+  width: 200px;
+  border-radius: 10px;
+}
+
+.search-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+}
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  border-bottom: 2px solid black;
+}

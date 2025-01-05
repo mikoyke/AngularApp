@@ -7,7 +7,7 @@ import { HttpClient } from "@angular/common/http";
 export class TodoService {
   todos!: Todo[];
   url = "https://jsonplaceholder.typicode.com/todos";
-  todo$ = new BehaviorSubject(this.todos);
+  // todo$ = new BehaviorSubject(this.todos);
   // value$ => Observer
 
   constructor(private http: HttpClient) {}
