@@ -19,7 +19,7 @@ property binding:
 
     <!-- 
     <input [(ngModel)]="title" />
-    {{ title }} -----------tool binding, title = input.value-->
+    {{ title }} -----------two-way binding, title = input.value-->
     <ul class="todolist-container">
       <app-todo-item
         *ngFor="let todo of todos | todoPipe : search"

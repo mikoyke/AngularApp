@@ -18,16 +18,27 @@ header {
 
 .search-button {
   position: absolute;
-  top: 10px;
+  top: 5px;
   right: 10px;
+  background-color: transparent;
   border: none;
 }
 .container {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
 }
 
 h1 {
   border-bottom: 2px solid black;
+}
+.Albums-list {
+  display: grid;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+  gap: 10px; /* Optional: Adds space between items */
+  width: 100%; /* Ensure it spans full width of the container */
+  max-width: 1200px; /* Optional: Limit the maximum width */
+  margin: 0 auto; /* Center the grid horizontally */
 }
