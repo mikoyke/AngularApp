@@ -11,6 +11,5 @@ export class SearchComponent {
   constructor(private bookService: BookService) {}
   consoleInput() {
     this.bookService.getBooks(this.bookName).subscribe();
-    console.log(this.bookName);
   }
 }
