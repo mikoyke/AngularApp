@@ -9,6 +9,10 @@ import { BookItemComponent } from './components/book-item/book-item.component';
 import { WishListComponent } from './components/wish-list/wish-list.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from './shared/shared.module';
+import { Route, RouterModule } from '@angular/router';
+import { HomeComponent } from './components/home/home.component';
+import { WishListPageComponent } from './components/wish-list-page/wish-list-page.component';
 
 @NgModule({
   declarations: [
@@ -17,8 +21,16 @@ import { HttpClientModule } from '@angular/common/http';
     BooklistComponent,
     BookItemComponent,
     WishListComponent,
+    HomeComponent,
+    WishListPageComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    SharedModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
