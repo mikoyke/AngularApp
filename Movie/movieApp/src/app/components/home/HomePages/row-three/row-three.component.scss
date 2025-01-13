@@ -1,0 +1,39 @@
+.container {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-section {
+  position: relative;
+  width: 500px;
+  height: auto;
+  max-width: 100%;
+}
+.tv-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.image {
+  position: absolute;
+  top: 30%;
+  left: 23%;
+  width: 370px;
+  height: 190px;
+  border-radius: 8px;
+}
+.content {
+  color: white;
+  font-size: x-large;
+
+  margin-top: 50px;
+}
+h1 {
+  padding-bottom: 20px;
+}

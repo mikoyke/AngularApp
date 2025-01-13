@@ -1,0 +1,97 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container::before {
+  content: "";
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1),
+      transparent 20%,
+      transparent 80%,
+      rgba(0, 0, 0, 1)
+    ),
+    url("https://www.pcworld.com/wp-content/uploads/2025/01/Netflix-Hintergrund.jpg?quality=50&strip=all");
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.container {
+  position: relative;
+  padding-bottom: 200px;
+}
+
+.container .title {
+  padding: 70px 45px;
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center;
+}
+.container .title .content {
+  width: 950px;
+  margin: auto;
+  padding: 75px 0;
+  text-align: center;
+  color: white;
+}
+.container .title .content h1 {
+  width: 650px;
+  margin: auto;
+  font-size: 3.1rem;
+  text-align: center;
+}
+.container .title .content h2 {
+  width: 650px;
+  margin: auto;
+  font-size: 1.6rem;
+  text-align: center;
+}
+.container .title .content form h3 {
+  font-size: 1rem;
+  margin: 18px 0;
+  text-align: center;
+}
+.container .title .content form .email {
+  width: 1000px;
+  margin: auto;
+}
+.container .title .content form .email input {
+  height: 60px;
+  width: 450px;
+  margin: auto;
+  padding: 20px;
+  font-size: 20px;
+  outline: none;
+}
+.container .title .content form .email button {
+  margin: auto;
+  height: 60px;
+  width: 180px;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  padding: 7px 17px;
+  background: #e50914;
+  cursor: pointer;
+  outline: none;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border: none;
+  margin-left: -5px;
+}
+.container .title .content form .email button:hover {
+  background-color: #f40612;
+}
+.container .title .content form .email button a {
+  text-decoration: none;
+  color: white;
+}

@@ -1,0 +1,93 @@
+.plan-page {
+  max-width: 800px;
+  margin: 200px auto;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  color: #e50914;
+  font-size: 1.5rem;
+}
+
+h3 {
+  margin: 10px 0;
+  font-size: 1.25rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+ul li {
+  margin: 10px 0;
+}
+
+.plans {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.plan {
+  width: 30%;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.plan:hover {
+  transform: translateY(-5px);
+  background-color: #f3f3f3;
+  border-color: #e50914;
+}
+
+.plan.selected {
+  border-color: #e50914;
+  background-color: #fbecec;
+}
+
+.plan-details {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.plan-details table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.plan-details th,
+.plan-details td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.plan-details th {
+  background-color: #f2f2f2;
+}
+
+.plan-details .selected-plan {
+  background-color: #e50914;
+  color: white;
+}
+
+.btn-submit {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background-color: #e50914;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
