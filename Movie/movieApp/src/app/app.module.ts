@@ -19,6 +19,7 @@ import { SharedModule } from './shared/shared.module';
 import { RowTwoComponent } from './components/home/Pages/row-two/row-two.component';
 import { ContextPipe } from './components/movie-item/context.pipe';
 import { RegisterApiComponent } from './components/registers/register-api/register-api.component';
+import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { RegisterApiComponent } from './components/registers/register-api/regist
     RegisterComponent,
     SelectPlanComponent,
     RegisterApiComponent,
+    MovieDetailsComponent,
   ],
   imports: [
     BrowserModule,
