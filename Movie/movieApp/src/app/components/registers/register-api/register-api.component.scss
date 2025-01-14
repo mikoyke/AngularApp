@@ -1,0 +1,60 @@
+.registerApi-page {
+  max-width: 600px;
+  margin: 200px auto;
+  padding: 30px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+.registerApi-page h2 {
+  margin-bottom: 10px;
+  color: #e50914;
+}
+
+.registerApi-page h3 {
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+}
+
+.registerApi-page p {
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+input.invalid {
+  border-color: #e50914;
+}
+
+.error-message small {
+  color: #e50914;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 12px;
+  background-color: red;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-submit:disabled {
+  background-color: #ccc;
+}

@@ -1,0 +1,62 @@
+<app-bar></app-bar>
+<div class="registerApi-page">
+  <form [formGroup]="registerApiForm" (ngSubmit)="onSubmit()">
+    <h4>Step 2 of 3</h4>
+    <h1>Create a Username && Add <br />your Tmdb Api_Key</h1>
+    <p>Just a few more steps and you're done! <br />We hate paperwork, too.</p>
+
+    <div class="form-group">
+      <input
+        type="text"
+        formControlName="username"
+        placeholder="Enter your username"
+        [class.invalid]="
+          registerApiForm.get('username')?.touched &&
+          registerApiForm.get('username')?.invalid
+        "
+      />
+      <div
+        *ngIf="
+          registerApiForm.get('username')?.touched &&
+          registerApiForm.get('username')?.invalid
+        "
+        class="error-message"
+      >
+        <small *ngIf="registerApiForm.get('username')?.errors?.['required']"
+          >username is required</small
+        >
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input
+        type="Api_Key"
+        formControlName="Api_Key"
+        placeholder="Add your Tmdb Api_Key"
+        [class.invalid]="
+          registerApiForm.get('Api_Key')?.touched &&
+          registerApiForm.get('Api_Key')?.invalid
+        "
+      />
+      <div
+        *ngIf="
+          registerApiForm.get('Api_Key')?.touched &&
+          registerApiForm.get('Api_Key')?.invalid
+        "
+        class="error-message"
+      >
+        <small *ngIf="registerApiForm.get('Api_Key')?.errors?.['required']"
+          >Key is required</small
+        >
+      </div>
+    </div>
+
+    <button
+      type="submit"
+      [disabled]="registerApiForm.invalid"
+      class="btn-submit"
+    >
+      Next
+    </button>
+  </form>
+</div>

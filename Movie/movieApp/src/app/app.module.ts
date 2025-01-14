@@ -13,11 +13,12 @@ import { RowOneComponent } from './components/home/Pages/row-one/row-one.compone
 import { RowThreeComponent } from './components/home/Pages/row-three/row-three.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { RegisterComponent } from './components/register/register.component';
-import { SelectPlanComponent } from './components/select-plan/select-plan.component';
+import { RegisterComponent } from './components/registers/register/register.component';
+import { SelectPlanComponent } from './components/registers/select-plan/select-plan.component';
 import { SharedModule } from './shared/shared.module';
 import { RowTwoComponent } from './components/home/Pages/row-two/row-two.component';
 import { ContextPipe } from './components/movie-item/context.pipe';
+import { RegisterApiComponent } from './components/registers/register-api/register-api.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ContextPipe } from './components/movie-item/context.pipe';
     SignInComponent,
     RegisterComponent,
     SelectPlanComponent,
+    RegisterApiComponent,
   ],
   imports: [
     BrowserModule,

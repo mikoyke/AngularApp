@@ -20,7 +20,7 @@ export class RegisterComponent {
   onSubmit(): void {
     if (this.registerForm.valid) {
       console.log('Register Form:', this.registerForm.value);
-      this.router.navigate(['/plan-selection']); // Navigate to the next page
+      this.router.navigate(['/register/registerApi']);
     }
   }
 }
