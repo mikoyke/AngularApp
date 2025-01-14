@@ -28,7 +28,6 @@ export class SelectPlanComponent {
   onNext(): void {
     if (this.selectedPlan) {
       console.log('Selected Plan:', this.selectedPlan);
-      // Navigate to the next page (or handle accordingly)
     } else {
       alert('Please select a plan to continue.');
     }

@@ -5,11 +5,12 @@
         class="netflix_icon"
         src="../assets/pictures/NetflixLogo.png"
         alt="netflix_logo"
+        (click)="navigateToHome()"
       />
     </div>
     <div class="right">
       <div class="Login">
-        <button class="signIn"><a hrdf="#">Sign In</a></button>
+        <button class="signIn" (click)="navigateToSignIn()">Sign In</button>
       </div>
     </div>
   </nav>
