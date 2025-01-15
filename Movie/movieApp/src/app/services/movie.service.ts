@@ -1,7 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, map, Observable, tap } from 'rxjs';
-import { moiveRes, movie, MovieDetails } from './interfaces';
+import {
+  Backdrop,
+  Backdrops,
+  Credits,
+  moiveRes,
+  movie,
+  MovieDetails,
+} from './interfaces';
 
 @Injectable({
   providedIn: 'root',
@@ -28,6 +35,17 @@ export class MovieService {
   getMovieDetails(movieId: number): Observable<MovieDetails> {
     return this.http.get<MovieDetails>(
       `${this.baseUrl}/movie/${movieId}?api_key=${this.apiKey}`
+    );
+  }
+
+  getMovieBackdrops(movieId: number): Observable<Backdrops> {
+    return this.http.get<Backdrops>(
+      `${this.baseUrl}/movie/${movieId}/images?api_key=${this.apiKey}`
+    );
+  }
+  getMovieCredis(movieId: number): Observable<Credits> {
+    return this.http.get<Credits>(
+      `${this.baseUrl}/movie/${movieId}/credits?api_key=${this.apiKey}`
     );
   }
 }

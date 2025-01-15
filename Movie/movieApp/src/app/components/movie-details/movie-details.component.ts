@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
-import { MovieDetails } from '../../services/interfaces';
-import { ActivatedRoute, Router } from '@angular/router';
+import {
+  Backdrop,
+  Backdrops,
+  MovieDetails,
+  Cast,
+  Credits,
+} from '../../services/interfaces';
+import { ActivatedRoute } from '@angular/router';
 import { MovieService } from '../../services/movie.service';
 
 @Component({
@@ -10,7 +16,9 @@ import { MovieService } from '../../services/movie.service';
 })
 export class MovieDetailsComponent {
   movie!: MovieDetails;
-  genresList!: string;
+  backdrop_img = '';
+  backdrops!: Backdrop[];
+  casts!: Cast[];
 
   constructor(
     private route: ActivatedRoute,
@@ -19,15 +27,19 @@ export class MovieDetailsComponent {
 
   ngOnInit() {
     const movieId = this.route.snapshot.params['id'];
+
     this.movieService
       .getMovieDetails(movieId)
       .subscribe((movieDetails: MovieDetails) => {
         this.movie = movieDetails;
-        this.genresList = this.getGenresList(this.movie.genres);
+        this.backdrop_img = this.movie.backdrop_path;
       });
-  }
+    this.movieService.getMovieBackdrops(movieId).subscribe((res: Backdrops) => {
+      this.backdrops = res.backdrops;
+    });
 
-  getGenresList(genres: { name: string }[] | null | undefined): string {
-    return genres?.map((g) => g.name).join(', ') || 'N/A';
+    this.movieService.getMovieCredis(movieId).subscribe((res: Credits) => {
+      this.casts = res.cast;
+    });
   }
 }

@@ -73,3 +73,34 @@ export interface SpokenLanguagesEntity {
   iso_639_1: string;
   name: string;
 }
+export interface Backdrops {
+  backdrops: Backdrop[];
+}
+export interface Backdrop {
+  aspect_ratio: number;
+  height: number;
+  iso_639_1: null;
+  file_path: string;
+  vote_average: number;
+  vote_count: number;
+  width: number;
+}
+
+export interface Credits {
+  id: number;
+  cast: Cast[];
+}
+export interface Cast {
+  adult: boolean;
+  gender: number;
+  id: number;
+  known_for_department: string;
+  name: string;
+  original_name: string;
+  popularity: number;
+  profile_path: string;
+  cast_id: number;
+  character: string;
+  credit_id: string;
+  order: number;
+}
