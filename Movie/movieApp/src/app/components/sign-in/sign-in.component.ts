@@ -3,9 +3,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-sign-in',
-  templateUrl: './sign-in.component.html',
-  styleUrl: './sign-in.component.scss',
+    selector: 'app-sign-in',
+    templateUrl: './sign-in.component.html',
+    styleUrl: './sign-in.component.scss',
+    standalone: false
 })
 export class SignInComponent {
   loginForm: FormGroup;

@@ -4,9 +4,10 @@ import { MovieService } from '../../services/movie.service';
 import { movie } from '../../services/interfaces';
 
 @Component({
-  selector: 'app-movie-list',
-  templateUrl: './movie-list.component.html',
-  styleUrl: './movie-list.component.scss',
+    selector: 'app-movie-list',
+    templateUrl: './movie-list.component.html',
+    styleUrl: './movie-list.component.scss',
+    standalone: false
 })
 export class MovieListComponent {
   moviesubp = new Subscription();

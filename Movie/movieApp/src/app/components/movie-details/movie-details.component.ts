@@ -10,9 +10,10 @@ import { ActivatedRoute } from '@angular/router';
 import { MovieService } from '../../services/movie.service';
 
 @Component({
-  selector: 'app-movie-details',
-  templateUrl: './movie-details.component.html',
-  styleUrl: './movie-details.component.scss',
+    selector: 'app-movie-details',
+    templateUrl: './movie-details.component.html',
+    styleUrl: './movie-details.component.scss',
+    standalone: false
 })
 export class MovieDetailsComponent {
   movie!: MovieDetails;

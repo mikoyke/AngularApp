@@ -4,9 +4,10 @@ import { movie } from '../../services/interfaces';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-movie-item',
-  templateUrl: './movie-item.component.html',
-  styleUrl: './movie-item.component.scss',
+    selector: 'app-movie-item',
+    templateUrl: './movie-item.component.html',
+    styleUrl: './movie-item.component.scss',
+    standalone: false
 })
 export class MovieItemComponent {
   @Input() movie!: movie;

@@ -3,9 +3,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-register-api',
-  templateUrl: './register-api.component.html',
-  styleUrl: './register-api.component.scss',
+    selector: 'app-register-api',
+    templateUrl: './register-api.component.html',
+    styleUrl: './register-api.component.scss',
+    standalone: false
 })
 export class RegisterApiComponent {
   registerApiForm: FormGroup;

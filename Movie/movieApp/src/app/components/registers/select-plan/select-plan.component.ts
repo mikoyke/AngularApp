@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-select-plan',
-  templateUrl: './select-plan.component.html',
-  styleUrl: './select-plan.component.scss',
+    selector: 'app-select-plan',
+    templateUrl: './select-plan.component.html',
+    styleUrl: './select-plan.component.scss',
+    standalone: false
 })
 export class SelectPlanComponent {
   plans = [
