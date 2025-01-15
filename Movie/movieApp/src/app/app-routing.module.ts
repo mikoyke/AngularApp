@@ -4,9 +4,9 @@ import { RegisterComponent } from './components/registers/register/register.comp
 import { SelectPlanComponent } from './components/registers/select-plan/select-plan.component';
 import { HomePageComponent } from './components/home/home-page/home-page.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
-import { MovieListComponent } from './components/movie-list/movie-list.component';
+import { MovieListComponent } from './components/movies/movie-list/movie-list.component';
 import { RegisterApiComponent } from './components/registers/register-api/register-api.component';
-import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+import { MovieDetailsComponent } from './components/movies/movie-details/movie-details.component';
 
 const routes: Route[] = [
   { path: 'home', component: HomePageComponent },

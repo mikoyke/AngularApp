@@ -8,6 +8,7 @@ import {
   moiveRes,
   movie,
   MovieDetails,
+  Videos,
 } from './interfaces';
 
 @Injectable({
@@ -46,6 +47,12 @@ export class MovieService {
   getMovieCredis(movieId: number): Observable<Credits> {
     return this.http.get<Credits>(
       `${this.baseUrl}/movie/${movieId}/credits?api_key=${this.apiKey}`
+    );
+  }
+
+  getMovieVideos(movieId: number): Observable<Videos> {
+    return this.http.get<Videos>(
+      `${this.baseUrl}/movie/${movieId}/videos?api_key=${this.apiKey}`
     );
   }
 }

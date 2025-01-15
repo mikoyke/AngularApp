@@ -24,7 +24,9 @@
           {{ movie.overview }}
         </section>
         <div class="buttons">
-          <button class="btn btn-play-trailer">Play Trailer</button>
+          <button class="btn btn-play-trailer" (click)="openTrailer()">
+            Play Trailer
+          </button>
           <button class="btn btn-play-now">Play Now</button>
         </div>
       </div>

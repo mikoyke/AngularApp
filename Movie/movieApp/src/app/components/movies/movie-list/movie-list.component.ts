@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { MovieService } from '../../services/movie.service';
-import { movie } from '../../services/interfaces';
+import { MovieService } from '../../../services/movie.service';
+import { movie } from '../../../services/interfaces';
 
 @Component({
-    selector: 'app-movie-list',
-    templateUrl: './movie-list.component.html',
-    styleUrl: './movie-list.component.scss',
-    standalone: false
+  selector: 'app-movie-list',
+  templateUrl: './movie-list.component.html',
+  styleUrl: './movie-list.component.scss',
+  standalone: false,
 })
 export class MovieListComponent {
   moviesubp = new Subscription();
