@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MovieItemComponent } from './components/movie-item/movie-item.component';
 import { MovieListComponent } from './components/movie-list/movie-list.component';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 import { HomePageComponent } from './components/home/home-page/home-page.component';
 import { RowOneComponent } from './components/home/Pages/row-one/row-one.component';
@@ -21,31 +21,24 @@ import { ContextPipe } from './components/movie-item/context.pipe';
 import { RegisterApiComponent } from './components/registers/register-api/register-api.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    MovieItemComponent,
-    MovieListComponent,
-    ContextPipe,
-    HomePageComponent,
-    RowOneComponent,
-    RowTwoComponent,
-    RowThreeComponent,
-    SignInComponent,
-    RegisterComponent,
-    SelectPlanComponent,
-    RegisterApiComponent,
-    MovieDetailsComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    SharedModule,
-    AppRoutingModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
-})
+@NgModule({ declarations: [
+        AppComponent,
+        MovieItemComponent,
+        MovieListComponent,
+        ContextPipe,
+        HomePageComponent,
+        RowOneComponent,
+        RowTwoComponent,
+        RowThreeComponent,
+        SignInComponent,
+        RegisterComponent,
+        SelectPlanComponent,
+        RegisterApiComponent,
+        MovieDetailsComponent,
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        SharedModule,
+        AppRoutingModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule {}
