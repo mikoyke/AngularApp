@@ -51,7 +51,6 @@ import { MatDialogModule } from '@angular/material/dialog';
     AppRoutingModule,
     ReactiveFormsModule,
     SharedModule,
-    AppRoutingModule,
     YouTubePlayerModule,
     MatDialogModule,
   ],

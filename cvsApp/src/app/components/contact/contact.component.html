@@ -1,0 +1,76 @@
+<div class="contact-page">
+  <h1 class="title">Contact Us</h1>
+  <form
+    [formGroup]="contactForm"
+    (ngSubmit)="onSubmit()"
+    class="contact_form"
+    [ngStyle]="{ display: Formdisplay }"
+  >
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        name="name"
+        formControlName="name"
+        [class.invalid]="
+          contactForm.get('name')?.touched && contactForm.get('name')?.invalid
+        "
+        [(ngModel)]="name"
+        class="input"
+      />
+      <div
+        *ngIf="
+          contactForm.get('name')?.touched && contactForm.get('name')?.invalid
+        "
+        class="error-message"
+      >
+        <small *ngIf="contactForm.get('name')?.errors?.['required']">
+          Name is required!
+        </small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="message">Message:</label>
+      <textarea
+        type="text"
+        name="message"
+        formControlName="message"
+        [class.invalid]="
+          contactForm.get('message')?.touched &&
+          contactForm.get('message')?.invalid
+        "
+        [(ngModel)]="message"
+        class="input"
+      ></textarea>
+      <div
+        *ngIf="
+          contactForm.get('message')?.touched &&
+          contactForm.get('message')?.invalid
+        "
+        class="error-message"
+      >
+        <small *ngIf="contactForm.get('message')?.errors?.['required']">
+          Message is required!
+        </small>
+        <small *ngIf="contactForm.get('message')?.errors?.['minlength']">
+          Message must be at least 10 characters!
+        </small>
+      </div>
+    </div>
+    <button type="submit" class="btn-submit" [disabled]="contactForm.invalid">
+      Send Message
+    </button>
+  </form>
+
+  <div class="after-submit" [ngStyle]="{ display: submit_display }">
+    <h3 class="worktext">
+      Thank You for contacting us. We will be in touch shortly!
+    </h3>
+    <hr />
+    <h4 class="submittedtext">You have submitted the following message:</h4>
+    <h4>Name:</h4>
+    <p>{{ name }}</p>
+    <h4>Message:</h4>
+    <p>{{ message }}</p>
+  </div>
+</div>

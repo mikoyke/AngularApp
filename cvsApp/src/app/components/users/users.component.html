@@ -1,0 +1,14 @@
+<div class="container">
+  <ul class="list">
+    <h1>CVS Users</h1>
+    <li *ngFor="let user of users" class="user_card">
+      <img [src]="user.avatar" alt="user_img" />
+      <div class="user_info">
+        <div>{{ user.first_name }} {{ user.last_name }}</div>
+        <a href="contact">
+          {{ user.email }}
+        </a>
+      </div>
+    </li>
+  </ul>
+</div>
