@@ -1,10 +1,10 @@
-export interface moiveRes {
+export interface MoiveRes {
   page: number;
-  results: movie[];
+  results: Movie[];
   total_pages: number;
   total_results: number;
 }
-export interface movie {
+export interface Movie {
   adult: boolean;
   backdrop_path: string;
   genre_ids?: number[] | null;

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { MovieService } from '../../../services/movie.service';
-import { movie } from '../../../services/interfaces';
+import { MovieService } from '../../../core/services/movie.service';
+import { Movie } from '../../../core/services/interfaces';
 
 @Component({
   selector: 'app-movie-list',
@@ -11,13 +11,13 @@ import { movie } from '../../../services/interfaces';
 })
 export class MovieListComponent {
   moviesubp = new Subscription();
-  movies!: movie[];
+  movies!: Movie[];
 
   constructor(private movieService: MovieService) {}
 
   ngOnInit() {
     this.moviesubp = this.movieService.movieSubject$.subscribe(
-      (val: movie[]) => {
+      (val: Movie[]) => {
         this.movies = val;
       }
     );

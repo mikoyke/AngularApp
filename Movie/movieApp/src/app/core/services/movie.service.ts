@@ -5,8 +5,8 @@ import {
   Backdrop,
   Backdrops,
   Credits,
-  moiveRes,
-  movie,
+  MoiveRes,
+  Movie,
   MovieDetails,
   Videos,
 } from './interfaces';
@@ -18,7 +18,7 @@ export class MovieService {
   private apiKey = '54fd29de665b2f87909a53797eb2a33c';
   private baseUrl = 'https://api.themoviedb.org/3';
 
-  private movieListSubject$ = new BehaviorSubject<movie[]>([]);
+  private movieListSubject$ = new BehaviorSubject<Movie[]>([]);
   movieSubject$ = this.movieListSubject$.asObservable();
 
   constructor(private http: HttpClient) {
@@ -26,9 +26,9 @@ export class MovieService {
   }
   getMovies() {
     return this.http
-      .get<moiveRes>(`${this.baseUrl}/movie/popular?api_key=${this.apiKey}`)
+      .get<MoiveRes>(`${this.baseUrl}/movie/popular?api_key=${this.apiKey}`)
       .pipe(
-        tap((val: moiveRes) => {
+        tap((val: MoiveRes) => {
           this.movieListSubject$.next(val.results);
         })
       );

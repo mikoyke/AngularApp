@@ -6,9 +6,9 @@ import {
   Cast,
   Credits,
   Videos,
-} from '../../../services/interfaces';
+} from '../../../core/services/interfaces';
 import { ActivatedRoute } from '@angular/router';
-import { MovieService } from '../../../services/movie.service';
+import { MovieService } from '../../../core/services/movie.service';
 import { MatDialog } from '@angular/material/dialog';
 import { TrailerDialogComponent } from '../trailer-dialog/trailer-dialog.component';
 
@@ -24,6 +24,7 @@ export class MovieDetailsComponent {
   backdrops!: Backdrop[];
   casts!: Cast[];
   selectedVideoId: string = '';
+  isPlayerVisible = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -56,9 +57,18 @@ export class MovieDetailsComponent {
       }
     });
   }
-  openTrailer() {
-    this.dialog.open(TrailerDialogComponent, {
-      data: { videoId: this.selectedVideoId },
-    });
+  // openTrailer() {
+  //   this.dialog.open(TrailerDialogComponent, {
+  //     data: { videoId: this.selectedVideoId },
+  //     width: '800px',
+  //     height: '600px',
+  //   });
+  // }
+
+  getVideo() {
+    this.isPlayerVisible = true;
+  }
+  closePlayer() {
+    this.isPlayerVisible = false;
   }
 }
