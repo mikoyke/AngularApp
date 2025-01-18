@@ -10,7 +10,6 @@ import {
 import { ActivatedRoute } from '@angular/router';
 import { MovieService } from '../../../core/services/movie.service';
 import { MatDialog } from '@angular/material/dialog';
-import { TrailerDialogComponent } from '../trailer-dialog/trailer-dialog.component';
 
 @Component({
   selector: 'app-movie-details',
@@ -57,13 +56,6 @@ export class MovieDetailsComponent {
       }
     });
   }
-  // openTrailer() {
-  //   this.dialog.open(TrailerDialogComponent, {
-  //     data: { videoId: this.selectedVideoId },
-  //     width: '800px',
-  //     height: '600px',
-  //   });
-  // }
 
   getVideo() {
     this.isPlayerVisible = true;

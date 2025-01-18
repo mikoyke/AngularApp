@@ -25,7 +25,7 @@ import { RegisterApiComponent } from './components/registers/register-api/regist
 import { MovieDetailsComponent } from './components/movies/movie-details/movie-details.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { TrailerDialogComponent } from './components/movies/trailer-dialog/trailer-dialog.component';
+
 import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
@@ -43,7 +43,6 @@ import { MatDialogModule } from '@angular/material/dialog';
     SelectPlanComponent,
     RegisterApiComponent,
     MovieDetailsComponent,
-    TrailerDialogComponent,
   ],
   bootstrap: [AppComponent],
   imports: [
