@@ -13,6 +13,6 @@ export class MovieItemComponent {
   @Input() movie!: Movie;
   constructor(private router: Router) {}
   navigateToDetails(movieId: number) {
-    this.router.navigate(['/movie-details', movieId]);
+    this.router.navigate(['movie-list/details', movieId]);
   }
 }

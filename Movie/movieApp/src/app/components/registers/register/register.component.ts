@@ -3,10 +3,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-    selector: 'app-register',
-    templateUrl: './register.component.html',
-    styleUrl: './register.component.scss',
-    standalone: false
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrl: './register.component.scss',
+  standalone: false,
 })
 export class RegisterComponent {
   registerForm: FormGroup;
@@ -21,7 +21,7 @@ export class RegisterComponent {
   onSubmit(): void {
     if (this.registerForm.valid) {
       console.log('Register Form:', this.registerForm.value);
-      this.router.navigate(['/register/registerApi']);
+      this.router.navigate(['register/registerApi']);
     }
   }
 }

@@ -5,7 +5,7 @@
       <img [src]="user.avatar" alt="user_img" />
       <div class="user_info">
         <div>{{ user.first_name }} {{ user.last_name }}</div>
-        <a href="contact">
+        <a [routerLink]="['/contact', user.email]">
           {{ user.email }}
         </a>
       </div>

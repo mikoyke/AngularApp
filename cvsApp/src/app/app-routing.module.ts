@@ -10,7 +10,7 @@ const routes: Routes = [
     component: UsersComponent,
   },
   {
-    path: 'contact',
+    path: 'contact/:email',
     component: ContactComponent,
   },
   { path: '', redirectTo: '', pathMatch: 'full' },
