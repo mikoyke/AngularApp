@@ -34,15 +34,18 @@ export class SelectPlanComponent {
 
   onNext(): void {
     if (this.selectedPlan) {
-      this.registrationService.setStepData('step3', {
-        role: this.selectedPlan,
+      this.authService.setRegistrationData('step3', {
+        plan: 'basic',
       });
-
-      const registrationData = this.registrationService.getRegistrationData();
-      console.log('Final Registration Data:', registrationData);
-
-      this.authService.signup(registrationData).subscribe((response) => {
-        this.router.navigate(['/movie-list']);
+      console.log(this.authService.getRegistrationData());
+      this.authService.submitRegistration().subscribe({
+        next: (response) => {
+          console.log('Registration complete:', response);
+          this.router.navigate(['/movie-list']);
+        },
+        error: (error) => {
+          console.error('Error during final submission:', error);
+        },
       });
     } else {
       alert('Please select a plan to continue.');

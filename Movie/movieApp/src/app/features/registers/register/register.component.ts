@@ -16,7 +16,7 @@ export class RegisterComponent {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private registrationService: RegistrationService
+    private authService: AuthService
   ) {
     this.registerForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -26,7 +26,7 @@ export class RegisterComponent {
 
   onSubmit(): void {
     if (this.registerForm.valid) {
-      this.registrationService.setStepData('step1', this.registerForm.value);
+      this.authService.setRegistrationData('step1', this.registerForm.value);
       this.router.navigate(['register/registerApi']);
     }
   }

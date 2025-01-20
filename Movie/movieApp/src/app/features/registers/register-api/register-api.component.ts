@@ -16,7 +16,7 @@ export class RegisterApiComponent {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private registrationService: RegistrationService
+    private authService: AuthService
   ) {
     this.registerApiForm = this.fb.group({
       username: ['', [Validators.required]],
@@ -26,7 +26,7 @@ export class RegisterApiComponent {
 
   onSubmit(): void {
     if (this.registerApiForm.valid) {
-      this.registrationService.setStepData('step2', this.registerApiForm.value);
+      this.authService.setRegistrationData('step2', this.registerApiForm.value);
       this.router.navigate(['/register/plans']);
     }
   }

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Route, RouterModule, Routes } from '@angular/router';
 
 import { HomePageComponent } from './features/home/home-page/home-page.component';
+import { AuthGuard } from './core/auth.guard';
 
 const routes: Route[] = [
   {
@@ -31,6 +32,7 @@ const routes: Route[] = [
       import('./features/movies/movie-list/movie-list.module').then(
         (m) => m.MovieListModule
       ),
+    canActivate: [AuthGuard],
   },
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },

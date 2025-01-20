@@ -9,8 +9,12 @@
       />
     </div>
     <div class="right">
-      <div class="Login">
+      <div class="Login" *ngIf="!isLoggedIn">
         <button class="signIn" (click)="navigateToSignIn()">Sign In</button>
+      </div>
+      <div class="Login" *ngIf="isLoggedIn">
+        <span class="username">{{ userName }}</span>
+        <button class="signOut" (click)="signOut()">Sign Out</button>
       </div>
     </div>
   </nav>

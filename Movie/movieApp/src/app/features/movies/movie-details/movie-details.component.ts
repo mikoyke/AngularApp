@@ -6,7 +6,7 @@ import {
   Cast,
   Credits,
   Videos,
-} from '../../../core/interfaces/interfaces';
+} from '../../../core/interfaces/movie.interface';
 import { ActivatedRoute } from '@angular/router';
 import { MovieService } from '../../../core/services/movie.service';
 import { MatDialog } from '@angular/material/dialog';

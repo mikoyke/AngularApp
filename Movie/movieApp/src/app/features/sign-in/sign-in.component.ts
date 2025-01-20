@@ -24,17 +24,22 @@ export class SignInComponent {
   }
 
   onSubmit(): void {
-    if (this.loginForm.valid) {
-      const appUser = this.loginForm.value;
-      this.authService.login(appUser).subscribe(
-        (response) => {
-          console.log('Logged in successfully', response);
-        },
-        (error) => {
-          console.error('Error during login', error);
-        }
-      );
-    }
+    const credentials = {
+      email: this.loginForm.value.email,
+      password: this.loginForm.value.password,
+    };
+
+    this.authService.signIn(credentials).subscribe({
+      next: (response) => {
+        console.log('Sign-in successful:', response);
+
+        this.router.navigate(['/movie-list']);
+      },
+      error: (error) => {
+        console.error('Sign-in error:', error);
+        alert('Invalid username or password');
+      },
+    });
   }
   navigateToRegister() {
     this.router.navigate(['/register']);
