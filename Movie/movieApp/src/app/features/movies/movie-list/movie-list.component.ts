@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { MovieService } from '../../../core/services/movie.service';
-import { Movie } from '../../../core/services/interfaces';
+import { Movie } from '../../../core/interfaces/interfaces';
 
 @Component({
   selector: 'app-movie-list',

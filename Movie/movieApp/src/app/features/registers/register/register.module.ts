@@ -9,6 +9,10 @@ const routes: Routes = [
   {
     path: '',
     component: RegisterComponent,
+  },
+  {
+    path: '',
+
     children: [
       { path: 'registerApi', component: RegisterApiComponent },
       { path: 'plans', component: SelectPlanComponent },

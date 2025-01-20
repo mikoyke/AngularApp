@@ -6,7 +6,7 @@ import {
   Cast,
   Credits,
   Videos,
-} from '../../../core/services/interfaces';
+} from '../../../core/interfaces/interfaces';
 import { ActivatedRoute } from '@angular/router';
 import { MovieService } from '../../../core/services/movie.service';
 import { MatDialog } from '@angular/material/dialog';
@@ -32,6 +32,8 @@ export class MovieDetailsComponent {
   ) {}
 
   ngOnInit() {
+    this.movie = this.route.snapshot.data['movie'];
+
     const movieId = this.route.snapshot.params['id'];
 
     this.movieService

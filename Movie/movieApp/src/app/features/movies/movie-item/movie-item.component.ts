@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MovieService } from '../../../core/services/movie.service';
-import { Movie } from '../../../core/services/interfaces';
+import { Movie } from '../../../core/interfaces/interfaces';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,8 +11,14 @@ import { Router } from '@angular/router';
 })
 export class MovieItemComponent {
   @Input() movie!: Movie;
+  loading = false;
   constructor(private router: Router) {}
-  navigateToDetails(movieId: number) {
-    this.router.navigate(['movie-list/details', movieId]);
+  async navigateToDetails(movieId: number) {
+    this.loading = true;
+    try {
+      await this.router.navigate(['movie-list/details', movieId]);
+    } finally {
+      this.loading = false;
+    }
   }
 }

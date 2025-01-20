@@ -9,7 +9,7 @@ import {
   Movie,
   MovieDetails,
   Videos,
-} from './interfaces';
+} from '../interfaces/interfaces';
 
 @Injectable({
   providedIn: 'root',
