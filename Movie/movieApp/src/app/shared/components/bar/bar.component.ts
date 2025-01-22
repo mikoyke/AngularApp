@@ -31,4 +31,7 @@ export class BarComponent {
     this.authService.logout();
     this.router.navigate(['/']);
   }
+  toMovieList() {
+    this.router.navigate(['/movie-list']);
+  }
 }

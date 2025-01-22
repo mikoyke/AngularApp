@@ -9,6 +9,9 @@
       />
     </div>
     <div class="right">
+      <div class="movie-list">
+        <button (click)="toMovieList()">Movie List</button>
+      </div>
       <div class="Login" *ngIf="!isLoggedIn">
         <button class="signIn" (click)="navigateToSignIn()">Sign In</button>
       </div>

@@ -41,7 +41,7 @@ export class SelectPlanComponent {
       this.authService.submitRegistration().subscribe({
         next: (response) => {
           console.log('Registration complete:', response);
-          this.router.navigate(['/movie-list']);
+          this.router.navigate(['/signIn']);
         },
         error: (error) => {
           console.error('Error during final submission:', error);
