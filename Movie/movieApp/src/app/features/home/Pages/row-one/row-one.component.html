@@ -3,13 +3,34 @@
     <div class="content">
       <h1>Unlimited movies, TV shows and more.</h1>
       <h2>Watch anywhere. Cancel anytime.</h2>
-      <form action="#">
+      <form [formGroup]="emailForm" (ngSubmit)="onSubmit()">
         <h3>
           Ready to watch? Enter your email to create or restart your membership.
         </h3>
         <div class="email">
-          <input type="email" name="email" placeholder="Email address" />
-          <button (click)="navigateToRegister()">Get Started ></button>
+          <input
+            formControlName="email"
+            type="email"
+            placeholder="Email address"
+            [class.invalid]="
+              emailForm.get('email')?.touched && emailForm.get('email')?.invalid
+            "
+          />
+
+          <button type="submit">Get Started ></button>
+        </div>
+        <div
+          *ngIf="
+            emailForm.get('email')?.touched && emailForm.get('email')?.invalid
+          "
+          class="error-message"
+        >
+          <p *ngIf="emailForm.get('email')?.errors?.['required']">
+            Email is required
+          </p>
+          <p *ngIf="emailForm.get('email')?.errors?.['email']">
+            Invalid email address
+          </p>
         </div>
       </form>
     </div>

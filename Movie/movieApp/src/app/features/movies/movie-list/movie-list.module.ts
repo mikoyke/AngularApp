@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MovieListComponent } from './movie-list.component';
 import { MovieDetailsComponent } from '../movie-details/movie-details.component';
 import { MovieDetailResolver } from '../../../core/services/movie-detail.resolver';
+import { roleGuard } from '../../../core/role.guard';
 
 const routes: Routes = [
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
       },
       { path: '', redirectTo: '', pathMatch: 'full' },
     ],
+    canActivate: [roleGuard],
   },
 ];
 

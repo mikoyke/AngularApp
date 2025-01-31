@@ -3,6 +3,7 @@ import { Route, RouterModule, Routes } from '@angular/router';
 
 import { HomePageComponent } from './features/home/home-page/home-page.component';
 import { AuthGuard } from './core/auth.guard';
+import { UpgradePlanComponent } from './features/registers/upgrade-plan/upgrade-plan.component';
 
 const routes: Route[] = [
   {
@@ -36,6 +37,7 @@ const routes: Route[] = [
   },
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'upgrade-plan', component: UpgradePlanComponent },
 ];
 
 @NgModule({

@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, map, Observable, tap } from 'rxjs';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
 import {
-  Backdrop,
   Backdrops,
   Credits,
   MoiveRes,
@@ -22,14 +21,17 @@ export class MovieService {
   movieSubject$ = this.movieListSubject$.asObservable();
 
   constructor(private http: HttpClient) {
-    this.getMovies().subscribe();
+    this.getMovies(1).subscribe();
   }
-  getMovies() {
+  getMovies(page: number) {
     return this.http
-      .get<MoiveRes>(`${this.baseUrl}/movie/popular?api_key=${this.apiKey}`)
+      .get<MoiveRes>(
+        `${this.baseUrl}/movie/popular?api_key=${this.apiKey}&page=${page}`
+      )
       .pipe(
         tap((val: MoiveRes) => {
-          this.movieListSubject$.next(val.results);
+          const currentMovies = this.movieListSubject$.getValue();
+          this.movieListSubject$.next([...currentMovies, ...val.results]);
         })
       );
   }

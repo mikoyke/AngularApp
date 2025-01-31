@@ -11,6 +11,7 @@ import { AuthService } from '../../../core/services/auth.service';
 export class BarComponent {
   isLoggedIn = false;
   userName: string | null = null;
+  role: string | null = null;
   constructor(private router: Router, private authService: AuthService) {}
 
   ngOnInit() {
@@ -20,7 +21,11 @@ export class BarComponent {
     this.authService.currentUser.subscribe((name) => {
       this.userName = name;
     });
+    this.authService.currentRole.subscribe((role) => {
+      this.role = role;
+    });
   }
+
   navigateToSignIn() {
     this.router.navigate(['/signIn']);
   }
@@ -33,5 +38,9 @@ export class BarComponent {
   }
   toMovieList() {
     this.router.navigate(['/movie-list']);
+  }
+
+  navigateToRole() {
+    this.router.navigate(['/upgrade-plan']);
   }
 }

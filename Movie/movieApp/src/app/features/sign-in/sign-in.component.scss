@@ -4,7 +4,6 @@
       to bottom,
       rgba(0, 0, 0, 1),
       transparent 20%,
-      transparent 80%,
       rgba(0, 0, 0, 1)
     ),
     url("https://www.pcworld.com/wp-content/uploads/2025/01/Netflix-Hintergrund.jpg?quality=50&strip=all");
@@ -17,21 +16,22 @@
   z-index: -1;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
 }
 .login-page {
-  max-width: 400px;
-  margin: 50px auto;
+  max-width: 250px;
+  margin: 100px auto;
   padding: 30px;
-  background-color: #141414;
+  height: 400px;
+  background-color: #141414d2;
   border-radius: 8px;
   color: #fff;
   font-family: Arial, sans-serif;
 }
 
-.login-form h2 {
+.login-form h4 {
   text-align: center;
-  margin-bottom: 20px;
+  margin: 20px;
+  font-size: 30px;
 }
 
 .form-group {
@@ -39,7 +39,7 @@
 }
 
 input {
-  width: 100%;
+  width: 90%;
   padding: 10px;
   margin-top: 5px;
   border: 1px solid #333;
@@ -70,32 +70,41 @@ input.invalid {
 }
 
 .btn-submit:disabled {
-  background-color: #444;
+  background-color: #da5050;
 }
 
 .options {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
+  font-size: xx-small;
 }
 
 .options label {
-  font-size: 14px;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
 }
 
 .options a {
-  font-size: 14px;
+  font-size: 10px;
   color: #fff;
   text-decoration: none;
 }
 
 .signup-now {
   margin-top: 20px;
-  text-align: center;
   font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.signup-link:hover {
+  cursor: pointer;
 }
 
 .signup-now a {
+  margin-left: 5px;
   color: #e50914;
   text-decoration: none;
 }

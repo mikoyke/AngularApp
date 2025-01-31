@@ -16,6 +16,7 @@ import { MovieDetailsComponent } from '../features/movies/movie-details/movie-de
 import { ReactiveFormsModule } from '@angular/forms';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { HttpClientModule } from '@angular/common/http';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     YouTubePlayerModule,
     HttpClientModule,
+    InfiniteScrollModule,
   ],
 })
 export class SharedModule {}

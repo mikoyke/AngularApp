@@ -44,32 +44,66 @@
   font-size: 16px;
 }
 
+.plans {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.plan-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  cursor: pointer;
+  width: 150px;
+  transition: 0.3s;
+}
+
+.plan-card h3 {
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.plan-card p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.active-plan {
+  color: #e02831ee;
+  font-weight: bold;
+}
+
+.plan-card.active-plan {
+  border: 2px solid #e02831ee;
+  box-shadow: 0 5px 15px rgba(224, 40, 49, 0.3);
+}
+
+.plan-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background-color: #f8525a;
+}
+
 .plan-details {
-  margin: auto;
-  width: 70%;
+  width: 100%;
+  border-collapse: collapse;
   margin-bottom: 24px;
   font-size: 14px;
-  text-align: center;
-}
-.detial-title {
-  text-align: start;
 }
 
-.plan-title {
-  background-color: #a77174ee;
-  color: white;
-  border: 5px solid white;
-  padding: 40px 20px;
-  font-size: 15px;
-}
-
-.plan-title:hover {
-  transform: translateY(-5px);
-  background-color: #e02831ee;
-}
-
+.plan-details th,
 .plan-details td {
   padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.plan-details th {
+  background-color: #f9f9f9;
   font-weight: bold;
 }
 
@@ -80,7 +114,7 @@
   border: none;
   padding: 0.75rem;
   border-radius: 5px;
-  width: 50%;
+  width: 95%;
   cursor: pointer;
   margin: 40px auto 0;
   display: block;
@@ -89,8 +123,4 @@
 
 .nextBtn:hover {
   background-color: #f8525a;
-}
-
-.active-plan {
-  color: #e02831ee;
 }

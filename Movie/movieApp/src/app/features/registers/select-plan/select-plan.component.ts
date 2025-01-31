@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { RegistrationService } from '../../../core/services/registeration.service';
 import { AuthService } from '../../../core/services/auth.service';
 
 @Component({
@@ -22,11 +21,7 @@ export class SelectPlanComponent {
   ];
   selectedPlan: any = null;
 
-  constructor(
-    private router: Router,
-    private authService: AuthService,
-    private registrationService: RegistrationService
-  ) {}
+  constructor(private router: Router, private authService: AuthService) {}
 
   selectPlan(plan: any): void {
     this.selectedPlan = plan;
@@ -35,7 +30,7 @@ export class SelectPlanComponent {
   onNext(): void {
     if (this.selectedPlan) {
       this.authService.setRegistrationData('step3', {
-        plan: 'basic',
+        role: this.selectedPlan,
       });
       console.log(this.authService.getRegistrationData());
       this.authService.submitRegistration().subscribe({

@@ -10,63 +10,41 @@
   </ul>
 </div>
 
-<div class="plans">
-  <div
-    class="plan-card"
-    [class.active-plan]="selectedPlan === 'basic'"
-    (click)="selectPlan('basic')"
-  >
-    <h3>Basic</h3>
-  </div>
-  <div
-    class="plan-card"
-    [class.active-plan]="selectedPlan === 'standard'"
-    (click)="selectPlan('standard')"
-  >
-    <h3>Standard</h3>
-  </div>
-  <div
-    class="plan-card"
-    [class.active-plan]="selectedPlan === 'premium'"
-    (click)="selectPlan('premium')"
-  >
-    <h3>Premium</h3>
-  </div>
-</div>
-
 <table class="plan-details">
   <thead>
     <tr>
       <th></th>
-      <th [class.active-plan]="selectedPlan === 'basic'">Basic</th>
-      <th [class.active-plan]="selectedPlan === 'standard'">Standard</th>
-      <th [class.active-plan]="selectedPlan === 'premium'">Premium</th>
+      <th class="plan-title" (click)="selectPlan('USER')">Basic</th>
+      <th class="plan-title" (click)="selectPlan('ADMIN')">Standard</th>
+      <th class="plan-title" (click)="selectPlan('SUPERUSER')">Premium</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Monthly price</td>
-      <td [class.active-plan]="selectedPlan === 'basic'">$9.99</td>
-      <td [class.active-plan]="selectedPlan === 'standard'">$15.49</td>
-      <td [class.active-plan]="selectedPlan === 'premium'">$19.99</td>
+      <td class="detial-title">Monthly price</td>
+      <td [class.active-plan]="selectedPlan === 'USER'">$9.99</td>
+      <td [class.active-plan]="selectedPlan === 'ADMIN'">$15.49</td>
+      <td [class.active-plan]="selectedPlan === 'SUPERUSER'">$19.99</td>
     </tr>
     <tr>
-      <td>Video quality</td>
-      <td [class.active-plan]="selectedPlan === 'basic'">Good</td>
-      <td [class.active-plan]="selectedPlan === 'standard'">Better</td>
-      <td [class.active-plan]="selectedPlan === 'premium'">Best</td>
+      <td class="detial-title">Video quality</td>
+      <td [class.active-plan]="selectedPlan === 'USER'">Good</td>
+      <td [class.active-plan]="selectedPlan === 'ADMIN'">Better</td>
+      <td [class.active-plan]="selectedPlan === 'SUPERUSER'">Best</td>
     </tr>
     <tr>
-      <td>Resolution</td>
-      <td [class.active-plan]="selectedPlan === 'basic'">480p</td>
-      <td [class.active-plan]="selectedPlan === 'standard'">1080p</td>
-      <td [class.active-plan]="selectedPlan === 'premium'">4K + HDR</td>
+      <td class="detial-title">Resolution</td>
+      <td [class.active-plan]="selectedPlan === 'USER'">480p</td>
+      <td [class.active-plan]="selectedPlan === 'ADMIN'">1080p</td>
+      <td [class.active-plan]="selectedPlan === 'SUPERUSER'">4K + HDR</td>
     </tr>
     <tr>
-      <td>Watch on your TV, computer, mobile phone, and tablet</td>
-      <td [class.active-plan]="selectedPlan === 'basic'">✔</td>
-      <td [class.active-plan]="selectedPlan === 'standard'">✔</td>
-      <td [class.active-plan]="selectedPlan === 'premium'">✔</td>
+      <td class="detial-title">
+        Watch on your TV, computer, mobile phone, and tablet
+      </td>
+      <td [class.active-plan]="selectedPlan === 'USER'">✔</td>
+      <td [class.active-plan]="selectedPlan === 'ADMIN'">✔</td>
+      <td [class.active-plan]="selectedPlan === 'SUPERUSER'">✔</td>
     </tr>
   </tbody>
 </table>

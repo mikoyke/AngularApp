@@ -13,3 +13,67 @@
     <app-root></app-root>
   </body>
 </html>
+
+import { Component, OnInit } from '@angular/core'; @Component({ selector:
+'my-app', templateUrl: './app.component.html', styleUrls:
+['./app.component.css'], }) export class AppComponent implements OnInit {
+searchInput:string = "" us_cities = [ "Abbeville", "Abbotsford", "Aberdeen",
+"Abilene", "Abingdon", "Abington", "Absecon", "Acampo", "Accokeek", "Achille",
+"Bakersfield", "Baltimore", "Bangor", "Barstow", "Baton Rouge", "Bayonne",
+"Beaumont", "Bellevue", "Bellingham", "Bethesda", "Charleston", "Charlotte",
+"Chattanooga", "Cheyenne", "Chicago", "Cincinnati", "Cleveland", "Columbia",
+"Columbus", "Concord", "Dallas", "Dayton", "Denver", "Des Moines", "Detroit",
+"Dover", "Durham", "El Paso", "Elizabeth", "Elk Grove", "Elkhart", "Elmira",
+"Elyria", "Erie", "Escondido", "Eugene", "Evansville", "Fargo", "Fayetteville",
+"Flagstaff", "Flint", "Florence", "Fort Collins", "Fort Lauderdale", "Fort
+Wayne", "Fort Worth", "Fresno", "Gainesville", "Galveston", "Garden Grove",
+"Gary", "Gastonia", "Glendale", "Grand Rapids", "Greensboro", "Greenville",
+"Gulfport", "Harrisburg", "Hartford", "Henderson", "Hickory", "High Point",
+"Hoboken", "Honolulu", "Houston", "Huntington", "Huntsville", "Indianapolis",
+"Irvine", "Irving", "Ithaca", "Ivins", "Jackson", "Jacksonville", "Jamestown",
+"Jersey City", "Johnson City", "Kansas City", "Kennewick", "Kenosha", "Killeen",
+"Kingsport", "Knoxville", "Kokomo", "Lafayette", "Lakewood", "Lancaster", "Las
+Vegas", "Lawrence", "Lexington", "Lincoln", "Little Rock", "Long Beach", "Los
+Angeles", "Louisville", "Lowell", "Lubbock", "Madison", "Manchester",
+"Marietta", "Medford", "Memphis", "Mesa", "Miami", "Milwaukee", "Minneapolis",
+"Mobile", "Nampa", "Nashville", "Newark", "New Orleans", "New York", "Newport
+News", "Norfolk", "Norman", "North Las Vegas", "Norwalk", "Oakland", "Ogden",
+"Oklahoma City", "Olympia", "Omaha", "Ontario", "Orlando", "Overland Park",
+"Oxnard", "Palm Bay", "Pasadena", "Paterson", "Pensacola", "Peoria",
+"Philadelphia", "Phoenix", "Pittsburgh", "Plano", "Portland", "Quincy",
+"Raleigh", "Rancho Cucamonga", "Reno", "Richmond", "Riverside", "Rochester",
+"Rockford", "Roseville", "Round Rock", "Sacramento", "Saint Louis", "Saint
+Paul", "Salem", "Salt Lake City", "San Antonio", "San Bernardino", "San Diego",
+"San Francisco", "San Jose", "Savannah", "Scottsdale", "Seattle", "Shreveport",
+"Sioux Falls", "Spokane", "Springfield", "Stamford", "Sterling Heights",
+"Stockton", "Tallahassee", "Tampa", "Tempe", "Thornton", "Toledo", "Topeka",
+"Torrance", "Tucson", "Tulsa", "Tuscaloosa", "Utica", "Valdosta", "Vancouver",
+"Ventura", "Victorville", "Virginia Beach", "Visalia", "Waco", "Warren",
+"Washington", "West Jordan", "West Palm Beach", "Westminster", "Wichita",
+"Wilmington", "Winston-Salem", "Woodbridge", "Worcester", "Yakima", "Yonkers",
+"York", "Youngstown" ]; constructor() {} ngOnInit() {} handleClick(city){
+this.searchInput = city } }
+
+<div>
+  <input type="text" [(ngModel)]="searchInput" />
+</div>
+
+<ul *ngIf="searchInput && searchInput.trim()!== '' ">
+  <div
+    *ngFor="let city of us_cities | search : searchInput "
+    (click)="handleClick(city)"
+  >
+    <li *ngIf="searchInput !== city">{{city}}</li>
+  </div>
+</ul>
+
+import { Pipe, PipeTransform } from '@angular/core'; @Pipe({ name: 'search' })
+export class SearchPipe implements PipeTransform { transform(cities: string[],
+keyword: string): string[] { return cities.filter((city:string)=>{ return
+city.toLowerCase().startsWith(keyword.trim().toLowerCase()) }); } } import {
+NgModule } from '@angular/core'; import { CommonModule } from '@angular/common';
+import { AppComponent } from './app.component'; import { BrowserModule } from
+'@angular/platform-browser'; import { FormsModule } from '@angular/forms';
+import { SearchPipe } from './search.pipe'; @NgModule({ imports: [CommonModule,
+BrowserModule,FormsModule, ], declarations: [AppComponent, SearchPipe],
+bootstrap: [AppComponent], }) export class AppModule {}

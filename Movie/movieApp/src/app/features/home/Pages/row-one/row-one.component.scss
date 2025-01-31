@@ -23,7 +23,8 @@
   z-index: -1;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
+
+  filter: brightness(0.5);
 }
 .container {
   position: relative;
@@ -91,4 +92,9 @@
 }
 .container .title .content form .email button:hover {
   background-color: #f40612;
+}
+.error-message {
+  position: relative;
+  right: 220px;
+  color: red;
 }
