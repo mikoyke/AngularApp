@@ -27,8 +27,7 @@ export class MovieDetailsComponent {
 
   constructor(
     private route: ActivatedRoute,
-    private movieService: MovieService,
-    private dialog: MatDialog
+    private movieService: MovieService
   ) {}
 
   ngOnInit() {
@@ -36,12 +35,7 @@ export class MovieDetailsComponent {
 
     const movieId = this.route.snapshot.params['id'];
 
-    this.movieService
-      .getMovieDetails(movieId)
-      .subscribe((movieDetails: MovieDetails) => {
-        this.movie = movieDetails;
-        this.backdrop_img = this.movie.backdrop_path;
-      });
+    this.backdrop_img = this.movie.backdrop_path;
     this.movieService.getMovieBackdrops(movieId).subscribe((res: Backdrops) => {
       this.backdrops = res.backdrops;
     });

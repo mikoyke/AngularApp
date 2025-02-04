@@ -113,4 +113,14 @@ export class AuthService {
         })
       );
   }
+  initiallizeAuthStatus(): Promise<void> {
+    return new Promise(() => {
+      const accessToken = localStorage.getItem('accessToken');
+      if (accessToken) {
+        console.log(accessToken);
+        this.handleAuthentication(accessToken);
+        this.loggedIn.next(true);
+      }
+    });
+  }
 }
