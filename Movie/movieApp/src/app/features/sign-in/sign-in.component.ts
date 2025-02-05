@@ -30,8 +30,8 @@ export class SignInComponent {
     };
 
     this.authService.signIn(credentials).subscribe({
-      next: () => {
-        console.log('Sign-in successful:');
+      next: (res) => {
+        console.log('Sign-in successful:', res);
         this.router.navigate(['/movie-list']);
       },
       error: (error) => {

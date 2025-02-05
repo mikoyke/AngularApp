@@ -84,7 +84,7 @@ export class AuthService {
   }
 
   checkLoggedIn(): boolean {
-    return !!localStorage.getItem('accessToken');
+    return this.loggedIn.getValue();
   }
 
   updateRole(newRole: string): Observable<any> {
@@ -114,13 +114,20 @@ export class AuthService {
       );
   }
   initiallizeAuthStatus(): Promise<void> {
-    return new Promise(() => {
+    return new Promise((resolve, reject) => {
+      console.log('initializing auth status');
       const accessToken = localStorage.getItem('accessToken');
       if (accessToken) {
-        console.log(accessToken);
-        this.handleAuthentication(accessToken);
-        this.loggedIn.next(true);
+        try {
+          console.log('accessToken:', accessToken);
+          this.handleAuthentication(accessToken);
+          this.loggedIn.next(true);
+        } catch (error) {
+          console.error('Error initializing auth status:', error);
+          this.loggedIn.next(false);
+        }
       }
+      resolve();
     });
   }
 }

@@ -18,7 +18,8 @@ export function initializeApp(authService: AuthService): () => Promise<void> {
     provideAnimationsAsync(),
     {
       provide: APP_INITIALIZER,
-      useFactory: () => initializeApp,
+      useFactory: initializeApp,
+      deps: [AuthService],
       multi: true,
     },
   ],

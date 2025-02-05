@@ -6,12 +6,16 @@ import { AuthGuard } from './core/auth.guard';
 import { UpgradePlanComponent } from './features/registers/upgrade-plan/upgrade-plan.component';
 
 const routes: Route[] = [
+  // {
+  //   path: 'home',
+  //   loadChildren: () =>
+  //     import('./features/home/home-page/home-page.module').then(
+  //       (m) => m.HomePageModule
+  //     ),
+  // },
   {
     path: 'home',
-    loadChildren: () =>
-      import('./features/home/home-page/home-page.module').then(
-        (m) => m.HomePageModule
-      ),
+    component: HomePageComponent,
   },
   {
     path: 'register',
